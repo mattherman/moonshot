@@ -14,7 +14,6 @@ position = Vector2( 536, 460 )
 [node name="Planet2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 735.942, 175.488 )
 scale = Vector2( 0.5, 0.5 )
-gravity = 49.0
 
 [node name="Planet3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 537.059, 526.414 )

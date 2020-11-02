@@ -14,3 +14,6 @@ texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 0.000682831, -14.846, -14.897, 15.039, 0.0461388, 8.69928, 15.0778, 15.1288 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
