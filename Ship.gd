@@ -3,6 +3,9 @@ extends RigidBody2D
 var thrust = Vector2(0, -250)
 var torque = 500
 
+func _ready():
+	add_to_group("player")
+
 func _integrate_forces(state):
 	if Input.is_action_pressed("ui_up"):
 		applied_force = thrust.rotated(rotation)

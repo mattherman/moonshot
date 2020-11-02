@@ -27,3 +27,5 @@ script = ExtResource( 3 )
 
 [node name="GravityWellCollision" type="CollisionShape2D" parent="GravityWell"]
 shape = SubResource( 2 )
+[connection signal="body_entered" from="GravityWell" to="GravityWell" method="_on_GravityWell_body_entered"]
+[connection signal="body_exited" from="GravityWell" to="GravityWell" method="_on_GravityWell_body_exited"]

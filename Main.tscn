@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Moon.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
 
@@ -9,12 +10,23 @@
 position = Vector2( 303.704, 285.611 )
 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
-position = Vector2( 536, 460 )
+position = Vector2( 306.107, 199.188 )
 
 [node name="Planet2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 735.942, 175.488 )
+position = Vector2( 1281.24, 23.2591 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Planet3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 537.059, 526.414 )
+position = Vector2( 1788.97, 226.5 )
 scale = Vector2( 0.75, 0.75 )
+
+[node name="Planet4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2021.61, 642.98 )
+scale = Vector2( 2, 2 )
+
+[node name="Moon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 611.383, 279.942 )
+thrust = 33
+
+[node name="Moon2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 474.238, 279.224 )
