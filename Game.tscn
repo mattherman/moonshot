@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Planet.tscn" type="PackedScene" id=2]
+
+[node name="Game" type="Node2D"]
+
+[node name="Planet" parent="." instance=ExtResource( 2 )]
+position = Vector2( 303.704, 285.611 )
+
+[node name="Ship" parent="." instance=ExtResource( 1 )]
+position = Vector2( 536, 460 )
+
+[node name="Planet2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 735.942, 175.488 )
+scale = Vector2( 0.5, 0.5 )
+gravity = 49.0
