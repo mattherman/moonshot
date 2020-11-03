@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 export var thrust = 22
+export var showOrbit = false
 var thrust_vector = Vector2()
 
 func _ready():
@@ -13,11 +14,12 @@ func _draw():
 	draw_line(Vector2(0,0), thrust_vector * thrust, Color(255, 0, 0), 1)
 	
 func _process(delta):
-	$Orbit.add_point(global_position)
-	if ($Orbit.get_point_count() > 2048):
-		$Orbit.remove_point(0)
-	update()
-	
+	if (showOrbit):
+		$Orbit.add_point(global_position)
+		if ($Orbit.get_point_count() > 2048):
+			$Orbit.remove_point(0)
+		update()
+
 func _integrate_forces(state):
 	var gravity_vector = state.total_gravity.normalized()
 	#print(normalized_gravity)
