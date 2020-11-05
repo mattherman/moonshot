@@ -9,8 +9,11 @@
 [node name="Planet" parent="." instance=ExtResource( 1 )]
 position = Vector2( 303.704, 285.611 )
 
+[node name="Moon" parent="Planet" instance=ExtResource( 3 )]
+showOrbit = true
+
 [node name="Ship" parent="." instance=ExtResource( 2 )]
-position = Vector2( 306.107, 199.188 )
+position = Vector2( 305.763, 200.16 )
 
 [node name="Planet2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1281.24, 23.2591 )
@@ -21,12 +24,5 @@ position = Vector2( 1788.97, 226.5 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Planet4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2021.61, 642.98 )
+position = Vector2( 2632.46, 953.8 )
 scale = Vector2( 2, 2 )
-
-[node name="Moon" parent="." instance=ExtResource( 3 )]
-position = Vector2( 611.383, 279.942 )
-thrust = 33
-
-[node name="Moon2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 474.238, 279.224 )

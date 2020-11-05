@@ -1,18 +1,22 @@
 extends RigidBody2D
 
-export var thrust = 22
+export var orbit_scale = 0.79
 export var showOrbit = false
-var thrust_vector = Vector2()
+var thrust
+
+# 150 / 30 / 0.55, radius ~= 228.8
+# 180 / 36 / 0.79, radius ~= 328.6
 
 func _ready():
 	add_to_group("moon")
 	set_process(true)
 	$Orbit.set_as_toplevel(true)
-	linear_velocity = Vector2(0, 150)
-	
-func _draw():
-	draw_line(Vector2(0,0), thrust_vector * thrust, Color(255, 0, 0), 1)
-	
+	var planet = get_parent()
+	var planet_gravity_radius = planet.gravity_well_radius()
+	linear_velocity = Vector2(0, 180)
+	position = Vector2(orbit_scale * planet_gravity_radius, 0)
+	thrust = 36
+
 func _process(delta):
 	if (showOrbit):
 		$Orbit.add_point(global_position)
@@ -22,8 +26,7 @@ func _process(delta):
 
 func _integrate_forces(state):
 	var gravity_vector = state.total_gravity.normalized()
-	#print(normalized_gravity)
-	thrust_vector = gravity_vector.tangent()
-	#print(tangent)
+	var thrust_vector = gravity_vector.tangent()
 	applied_force = thrust_vector * thrust * mass
-	#print(applied_force)
+	print(str("applied_force.length = ", applied_force.length())) #3011.8000, 3599.9998
+	print(str("linear_velocity.length = ", linear_velocity.length())) #149.1875, 179.8015
