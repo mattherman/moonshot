@@ -2,15 +2,23 @@
 
 [ext_resource path="res://Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Moon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Moon.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 
 [node name="Planet" parent="." instance=ExtResource( 1 )]
 position = Vector2( 303.704, 285.611 )
 
-[node name="Moon" parent="Planet" instance=ExtResource( 3 )]
-showOrbit = true
+[node name="Moon" parent="Planet" instance=ExtResource( 4 )]
+
+[node name="Moon2" parent="Planet" instance=ExtResource( 4 )]
+rotation_speed = 0.75
+rotation_dir = -1
+orbit_scale = 0.3
+
+[node name="Moon3" parent="Planet" instance=ExtResource( 4 )]
+rotation_speed = 0.2
+orbit_scale = 0.75
 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
 position = Vector2( 305.763, 200.16 )
